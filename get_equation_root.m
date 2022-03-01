@@ -5,7 +5,7 @@ function [root_x] = get_equation_root(start, stop, step, t3, t2, t1, t0)
     root_x = (start + stop) / 2;
     root_fx = t3 * root_x^3 + t2 * root_x^2 + t1 * root_x + t0;
 
-    while abs(start - stop) > step
+    while abs(start) - abs(stop) > step
         if start_fx > 0 && stop_fx < 0
             if root_fx > 0
                 start = root_x;
@@ -29,7 +29,7 @@ function [root_x] = get_equation_root(start, stop, step, t3, t2, t1, t0)
             end
         
         else
-            disp('IDK lol')
+            %disp('IDK lol')
             break
 
         end
